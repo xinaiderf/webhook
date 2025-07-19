@@ -9,9 +9,12 @@ import asyncio
 
 app = FastAPI()
 
+# ✅ Variáveis globais para comunicação
+webhook_event = asyncio.Event()
+webhook_data = None
+
 ### WEBHOOK DO N8N ###
 
-# Modelo do corpo do webhook
 class WebhookPayload(BaseModel):
     codigo: str
     status: str = None
@@ -33,6 +36,4 @@ async def aguardar_webhook():
 ### WEBHOOK DO N8N ###
 
 if __name__ == "__main__":
-    import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=2501)
-
