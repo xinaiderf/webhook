@@ -1,8 +1,4 @@
 fastapi
-pydantic 
+pydantic
 selenium
-selenium.webdriver.common.by
-selenium.webdriver.chrome.options
-time
 uvicorn
-asyncio
